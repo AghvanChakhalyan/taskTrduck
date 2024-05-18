@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="aut-action" *ngIf="!(authService.isAuth$ | async)">
+    <button mat-raised-button color="warn" routerLink="/auth/login">
+      Login</button>
+    <button mat-raised-button color="warn" routerLink="/auth/register">
+      Register</button>
+  </div>
+  <button *ngIf="authService.isAuth$ | async" mat-raised-button color="warn" (click)="logout()">
+    Logout</button>
+</div>
+<router-outlet />

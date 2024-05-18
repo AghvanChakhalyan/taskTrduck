@@ -1,0 +1,16 @@
+<div class="form">
+    <h1>Login</h1>
+    <form [formGroup]="form" novalidate (ngSubmit)="submit()">
+        <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" >
+        <mat-error>{{getEmailErrorMesage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" formControlName="password" matInput>
+        <mat-error>{{getPasswordErrorMesage()}}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="form.invalid">submit</button>
+    </form>
+</div>
